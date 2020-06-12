@@ -1,0 +1,196 @@
+body{
+    overflow: hidden;
+}
+#escena-interaccion{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    height: 100%;
+}
+.center{
+    text-align: center;
+}
+.aling-right{
+    text-align: right;
+}
+.center-vertical{
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: middle;
+}
+#guia{
+    background: black;
+    color: white;
+    
+    height: 100%;
+    padding: 30px;
+}
+#footer-info{
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: -27px;
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    background: black;
+    z-index: 12 !important;
+}
+#footer-info button{
+    width: 100%;
+}
+#escena-2{
+    margin-top: auto;
+    margin-bottom: 0;
+    margin-bottom: -350px;
+}
+#contenedor-guia-1{
+    margin-bottom: -310px;
+    z-index: 11 !important;
+}
+/*
+CONTROLES DE ROTACIÓN
+*/
+#rotacion{
+    margin-bottom: 15px;
+}
+#buttons-y{
+    text-align: center;
+}
+#buttons-y #ymas, #ymenos{
+    width: 80px;
+    height: 40px;
+    border: none; 
+    background: rgb(0, 140, 255);
+    color: white;
+}
+
+#ymas{
+    border-radius: 50px 50px 0 0;
+}
+#ymenos{
+    border-radius: 0 0 50px 50px;
+}
+#ymas:active, #ymenos:active{
+    border: solid 2px rgb(0, 140, 255) !important;
+    background: white !important;
+    color: black !important;
+}
+#buttons-z{
+    display: grid;
+    background: rgb(255, 0, 0);
+}
+#buttons-z button{    
+    width: 80px;
+    height: 40px;
+    border: none;   
+    background: rgba(30, 255, 0, 0.89);
+    color: white;
+}
+#zmas{    
+    border-radius: 50px 50px 0 0;
+}
+#zmas:active, #zmenos:active{
+    border: solid 2px rgba(30, 255, 0, 0.89);
+    background: white;
+    color: black;
+}
+#zmenos{
+    border-radius: 0 0 50px 50px;
+}
+#buttons-x{
+    display: flex;    
+}
+#buttons-x #xmas,#xmenos{
+    background: rgb(255, 0, 0);
+    width: 40px;
+    height: 80px;
+    border: none;   
+    color: white;
+}
+#xmas{        
+    border-radius:50px 0 0 50px;
+}
+#xmenos:active, #xmas:active{
+    border: solid 2px rgb(255, 0, 0) !important;
+    background: white !important;
+    color: black !important;
+}
+#xmenos{
+    border-radius: 0 50px 50px 0;
+}
+
+
+
+/*
+CONTROLES DE ESCALA
+*/
+#contenedor-valor-rango{
+    text-align: center;
+    margin-bottom: 40px;
+    background: red;
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+#contenedor-valor-posicion{
+    color: white;
+    background: rgb(0, 140, 255);;
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 2px;
+    margin-left: 20px;
+}
+#posicion{
+    height: 300px;
+    margin-left: 80%;
+}
+#range_posicion{
+    width: 200px;
+    transform: rotate(-90deg);
+}
+  .slider {
+    -webkit-appearance: none;
+    width:100%;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-bottom: 20px;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    background: #ff002b;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+    background: #ff002b;
+    cursor: pointer;
+    border: none;
+  }
+
