@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="img/foca.svg" />
   <link href="https://pengui.herokuapp.com/img/foca.svg" rel="image_src" />
+  <meta property="og:title" content="Pengüi" />
+  <meta property="og:description" content="En algún lugar, algo increíble está esperando a ser descubierto." />
+  <meta property="og:image" content="img/foca.svg" />
   <title>WebAR</title>
   <script src="js/jquery.js"></script>
   <style>
@@ -38,7 +41,7 @@
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="css/estilos.css">
   <script>
-    document.oncontextmenu = function(){return false}
+    document.oncontextmenu = function () { return false }
     if (window.location.protocol == "http:") {
       window.location = window.location.href.replace('http:', 'https:');
     }
@@ -74,17 +77,17 @@
         </p>
 
         <p class="aling-right">
-         <em>
-          “En algún lugar, algo increíble está esperando a ser descubierto.”.
-         </em>
+          <em>
+            “En algún lugar, algo increíble está esperando a ser descubierto.”.
+          </em>
         <div class="aling-right"><strong><em>Carl Sagan</em></strong></div>
         </p>
         <div class="center">
           <h2>Antes de empezar</h2>
-         
+
           <div id="img-intrucciones" class="row">
             <div class="col-md-4">
-              <p >
+              <p>
                 Es importante que le permitas a la aplicación usar tu camara para poder
                 realizar esta experiencia, si no lo has echo recarga la apliación.
               </p>
@@ -92,21 +95,22 @@
                 Esta imagen se llama <strong>"marcador"</strong>.
               </p>
               <img src="img/hiro.png" class="img-fluid" width="200" alt="">
-              
+
             </div>
             <div class="col-md-4">
               <p>
                 Si ves el mensaje <strong>"Con tu cámara enfoca el marcador" </strong> has lo siguiente:
               </p>
-              <img src="img/1.jpg" class="img-fluid" alt="" >
+              <img src="img/1.jpg" class="img-fluid" alt="">
             </div>
             <div class="col-md-4">
               <img src="img/2.jpg" class="img-fluid" alt="" style="height: 286.867px;">
             </div>
           </div>
           <p>Puedes descargar el marcador en el siguiente link <a target="_blank"
-              href="https://stemkoski.github.io/AR-Examples/markers/hiro.png">(Has clic aquí)</a>. Tambíen puedes usar la imagen digital desde un celular o computadora.</p>
-          
+              href="https://stemkoski.github.io/AR-Examples/markers/hiro.png">(Has clic aquí)</a>. Tambíen puedes usar
+            la imagen digital desde un celular o computadora.</p>
+
           <p>Para obtener una mejor experiencia recomendamos usar Firefox. Comparte el link con tus amigos :).</p>
           <img src="https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo-word-hor-sm.5622edbdf02d.png"
             width="100px" alt="">
