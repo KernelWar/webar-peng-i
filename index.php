@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <link rel="shortcut icon" type="image/png" href="realidad-aumentada.png" />
+  <link rel="shortcut icon" type="image/png" href="img/foca.svg" />
   <title>WebAR</title>
   <script src="js/jquery.js"></script>
   <style>
@@ -72,13 +72,9 @@
           didacticos.
         </p>
 
-        <p>
+        <p class="aling-right">
          <em>
-          “La Tierra es un lugar más bello para nuestros ojos
-          que cualquiera que conozcamos. Pero esa belleza ha
-          sido esculpida por el cambio: el cambio suave, casi
-          imperceptible, y el cambio repentino y violento.
-          En el cosmos no hay lugar que esté a salvo del cambio”.
+          “En algún lugar, algo increíble está esperando a ser descubierto.”.
          </em>
         <div class="aling-right"><strong><em>Carl Sagan</em></strong></div>
         </p>
@@ -99,7 +95,7 @@
             </div>
             <div class="col-md-4">
               <p>
-                Si ves el mensaje <strong>"Con tu cámara enfoca el marcador".</strong> has lo siguiente:
+                Si ves el mensaje <strong>"Con tu cámara enfoca el marcador" </strong> has lo siguiente:
               </p>
               <img src="img/1.jpg" class="img-fluid" alt="" >
             </div>
@@ -110,7 +106,7 @@
           <p>Puedes descargar el marcador en el siguiente link <a target="_blank"
               href="https://stemkoski.github.io/AR-Examples/markers/hiro.png">(Has clic aquí)</a>. Tambíen puedes usar la imagen digital desde un celular o computadora.</p>
           
-          <p>Para obtener una mejor experiencia recomendamos usar Firefox. Comparte el link con tus amigos :)</p>
+          <p>Para obtener una mejor experiencia recomendamos usar Firefox. Comparte el link con tus amigos :).</p>
           <img src="https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo-word-hor-sm.5622edbdf02d.png"
             width="100px" alt="">
           <br><br>
