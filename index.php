@@ -12,7 +12,8 @@
 
   <script src="aframe/aframe-layout-component.min.js"></script>
   <script src="aframe/aframe-spe-particles-component.js"></script>
-
+  <script src="js/gesture-detector.js"></script>
+  <script src="js/gestures.handler.js"></script>
 
   <script src="js/jquery.js"></script>
 
@@ -45,6 +46,15 @@
           En el cosmos no hay lugar que esté a salvo del cambio.”
         <div class="aling-right"><strong>Carl Sagan</strong></div>
         </p>
+        <div class="center">
+          <br>
+          <br><br>
+          <br>
+          <p>Para obtener una mejor experiencia recomendamos usar Firefox</p>
+          <img src="https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo-word-hor-sm.5622edbdf02d.png"
+            width="100px" alt="">
+        </div>
+
       </div>
       <div id="escena-2" class="center-vertical">
         <div id="contenedor-guia-1" class="center">
@@ -209,9 +219,9 @@
       <button id="btn-siguiente" type="button" class="btn btn-outline-dark  btn-sm btn-footer">Siguiente</button>
     </div>
   </div>
-  <div id="aframe-escenario">
-    <a-scene  arjs="debugUIEnabled: false;" embedded renderer="logarithmicDepthBuffer: true;"
-    vr-mode-ui="enabled: false" gesture-detector>
+
+  <a-scene id="aframe-escenario" gesture-detector arjs="debugUIEnabled: false;" embedded
+    renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector>
 
     <a-assets>
       <img id="textura-sol" src="texturas/2k_sun.jpg">
@@ -225,9 +235,10 @@
     <a-sound src="#sonido-fondo" autoplay="true" position="0 0 0" volume="0.08"></a-sound>
 
 
-    <a-marker emitevents="true" id="marcador" preset="hiro">
+    <a-marker emitevents="true" id="marcador" preset="hiro" raycaster="objects: .clickable" emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;">
 
-      <a-entity id="escena-completa">
+      <a-entity id="escena-completa" gesture-handler>
         <a-entity id="grupo-asteroides" scale="0.2 0.2 0.2" position="0 1.4 0">
           <a-entity animation="property: object3D.rotation.y; to: 360 -260 10; loop: true; dur: 30000; easing: linear"
             rotation="0 124.534 0" position="2 0 -1.717">
@@ -320,8 +331,8 @@
 
   </a-scene>
 
-  </div>
-  
+
+
 
 
   <script src="bootstrap/popper.min.js"></script>
@@ -502,6 +513,7 @@
           break;
         case 10:
           ocultarEscenario();
+          $("#base").css("display", "none");
           //$("#rotacion").show();
           tierra.setAttribute('visible', true);
           break;
