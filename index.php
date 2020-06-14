@@ -74,7 +74,7 @@
         <p>
           Estas apunto de iniciar una experiencia
           online de realidad aumentada. Esta apliación fue echa para motivos
-          didacticos.
+          didácticos.
         </p>
 
         <p class="aling-right">
@@ -123,7 +123,7 @@
         <div id="contenedor-guia-1" class="center">
           <div class="center-vertical center">
             <h1>Hola</h1>
-            <p>Me llamo pengüi y sere tu guia</p>
+            <p>Me llamo pengüi y sere tu guía</p>
           </div>
           <img id="personaje-guia" src="img/foca.svg" width="200px" alt="">
         </div>
