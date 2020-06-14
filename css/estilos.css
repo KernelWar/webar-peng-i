@@ -1,70 +1,177 @@
-body{
-    overflow: hidden;
-}
-#escena-interaccion{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    height: 100%;
-}
 .center{
     text-align: center;
 }
 .aling-right{
     text-align: right;
 }
+.aling-left{
+    text-align: left;
+}
 .center-vertical{
     margin-top: auto;
     margin-bottom: auto;
     vertical-align: middle;
 }
-#guia{
-    background: black;
-    color: white;
+.ar-iframe{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
     
+}
+.controles-aframe{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+html,body{
     height: 100%;
-    padding: 30px;
 }
-#footer-info{
-    width: 100%;
-    margin-top: auto;
-    margin-bottom: -27px;
+body{
+    overflow: hidden;
+}
+#base{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
     display: flex;
-    padding-left: 5%;
-    padding-right: 5%;
-    background: black;
-    z-index: 12 !important;
+    flex-direction: column;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.500);
+    
 }
-#footer-info button{
+#escenario{
+    height: 100%;
+    color: white;
+    z-index: 10;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+#btn-control-escenario{
+    display: flex;
+    z-index: 10;
+}
+.btn-footer{    
+    min-width: 50%;
+    width: 100%; 
+    background: black;   
+}
+#aframe-escenario{
+    z-index: 8;
     width: 100%;
 }
+
+/*
+ESCENA 2
+*/
 #escena-2{
-    margin-top: auto;
-    margin-bottom: 0;
-    margin-bottom: -350px;
+    z-index: 9;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
 }
 #contenedor-guia-1{
-    margin-bottom: -310px;
-    z-index: 11 !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: -260px;
+}
+
+/*
+ESCENA 3
+*/
+#escena-3{
+    padding-top: 200px;
+}
+#contenedor-guia-2 {
+    transform: rotate(180deg) !important;
+    margin-top: -40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+
+
+
+/*
+ESCENEA 4
+
+*/
+#escena-4{
+    width: 100%;
+    height: 100%;
+}
+#contenedor-guia-4{
+    text-align: right;
+}
+#personaje-guia-4{
+    width: 150px;
+    margin-right: -150px;
+}
+
+/*
+ESCENEA 5
+*/
+
+#personaje-guia-5{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: -20px;
+}
+
+
+
+/*
+ESCENA 9
+*/
+#contenedor-guia-9{
+    margin-top: 100px;
+}
+#personaje-guia-9{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 /*
 CONTROLES DE ROTACIÓN
 */
 #rotacion{
-    margin-bottom: 15px;
+    text-align: center;
+    display: ruby;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 40px;
 }
 #buttons-y{
     text-align: center;
+    display: inline-block;
+    display: table;
 }
 #buttons-y #ymas, #ymenos{
     width: 80px;
     height: 40px;
     border: none; 
-    background: rgb(0, 140, 255);
+    background: rgb(20, 0, 255);
     color: white;
 }
 
@@ -75,26 +182,26 @@ CONTROLES DE ROTACIÓN
     border-radius: 0 0 50px 50px;
 }
 #ymas:active, #ymenos:active{
-    border: solid 2px rgb(0, 140, 255) !important;
+    border: solid 2px rgb(20, 0, 255) !important;
     background: white !important;
     color: black !important;
 }
 #buttons-z{
     display: grid;
-    background: rgb(255, 0, 0);
+    background: rgb(0, 0, 0);
 }
 #buttons-z button{    
     width: 80px;
     height: 40px;
     border: none;   
-    background: rgba(30, 255, 0, 0.89);
+    background: rgb(255, 0, 48);
     color: white;
 }
 #zmas{    
     border-radius: 50px 50px 0 0;
 }
 #zmas:active, #zmenos:active{
-    border: solid 2px rgba(30, 255, 0, 0.89);
+    border: solid 2px rgb(255, 0, 48);
     background: white;
     color: black;
 }
@@ -105,7 +212,7 @@ CONTROLES DE ROTACIÓN
     display: flex;    
 }
 #buttons-x #xmas,#xmenos{
-    background: rgb(255, 0, 0);
+    background: rgb(0, 0, 0);
     width: 40px;
     height: 80px;
     border: none;   
@@ -115,7 +222,7 @@ CONTROLES DE ROTACIÓN
     border-radius:50px 0 0 50px;
 }
 #xmenos:active, #xmas:active{
-    border: solid 2px rgb(255, 0, 0) !important;
+    border: solid 2px rgb(0, 0, 0) !important;
     background: white !important;
     color: black !important;
 }
@@ -128,7 +235,13 @@ CONTROLES DE ROTACIÓN
 /*
 CONTROLES DE ESCALA
 */
-#contenedor-valor-rango{
+.contenedor-rango{
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    bottom: 0;
+}
+.rango{
     text-align: center;
     margin-bottom: 40px;
     background: red;
@@ -140,29 +253,11 @@ CONTROLES DE ESCALA
     margin-left: auto;
     margin-right: auto;
 }
-#contenedor-valor-posicion{
-    color: white;
-    background: rgb(0, 140, 255);;
-    border-radius: 100px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    padding: 2px;
-    margin-left: 20px;
-}
-#posicion{
-    height: 300px;
-    margin-left: 80%;
-}
-#range_posicion{
-    width: 200px;
-    transform: rotate(-90deg);
-}
   .slider {
     -webkit-appearance: none;
     width:100%;
     height: 5px;
-    background: #d3d3d3;
+    background: #000000;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -180,7 +275,7 @@ CONTROLES DE ESCALA
     width: 25px;
     height: 25px;
     border-radius: 100px;
-    background: #ff002b;
+    background: red;
     cursor: pointer;
     border: none;
   }
@@ -189,7 +284,7 @@ CONTROLES DE ESCALA
     width: 25px;
     height: 25px;
     border-radius: 100px;
-    background: #ff002b;
+    background: red;
     cursor: pointer;
     border: none;
   }

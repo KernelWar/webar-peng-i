@@ -6,10 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="realidad-aumentada.png" />
   <title>WebAR</title>
+
   <script src="aframe/aframe.min.js"></script>
   <script src="aframe/aframe-ar.js"></script>
+
   <script src="aframe/aframe-layout-component.min.js"></script>
   <script src="aframe/aframe-spe-particles-component.js"></script>
+
+
   <script src="js/jquery.js"></script>
 
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
@@ -23,10 +27,10 @@
 </head>
 
 <body>
-  <div id="escena-interaccion">
-    <div id="guia" class="row">
+  <div id="base" class="container-fluid">
+    <div id="escenario" class="row">
       <div id="escena-1" class="container center-vertical">
-        <h1 class="center">Bienvenido !!</h1>
+        <h2 class="center">Bienvenido !!</h2>
         <p>
           Estas apunto de iniciar una experiencia
           online de realidad aumentada. Esta apliación fue echa para motivos
@@ -42,56 +46,172 @@
         <div class="aling-right"><strong>Carl Sagan</strong></div>
         </p>
       </div>
-      <div id="escena-2" class="container center-vertical">
-
+      <div id="escena-2" class="center-vertical">
         <div id="contenedor-guia-1" class="center">
           <div class="center-vertical center">
             <h1>Hola</h1>
-            <p>Me llamo pengui y sere tu guia</p>
+            <p>Me llamo pengüi y sere tu guia</p>
           </div>
           <img id="personaje-guia" src="img/foca.svg" width="200px" alt="">
         </div>
       </div>
       <div id="escena-3" class="container center-vertical">
-        <h2>escena 3</h2>
-      </div>
-      <div id="footer-info">
-        <button id="btn-atras" type="button" class="btn btn-outline-dark btn-sm">Atras</button>
-        <button id="btn-siguiente" type="button" class="btn btn-outline-dark btn-sm">Siguiente</button>
-      </div>
-    </div>
-
-
-    <div id="rotacion" hidden>
-      <div id="buttons-y">
-        <button id="ymas">y+</button>
-        <div id="buttons-x">
-          <button id="xmas">x+</button>
-          <div id="buttons-z">
-            <button id="zmas">z+</button>
-            <button id="zmenos">z-</button>
-          </div>
-          <button id="xmenos">x-</button>
+        <div id="contenedor-guia-2" class="center">
+          <img id="personaje-guia-2" src="img/foca.svg" width="200" alt="Mi nombre es pengüi">
         </div>
-        <button id="ymenos">y-</button>
+        <div class="center">
+          <h2>¿Qué es una orbita?</h2>
+        </div>
+        <div>
+          <p>
+            Curva que describe un cuerpo alrededor de otro en el espacio,
+            especialmente un planeta, cometa, satélite etc., como consecuencia
+            de la acción de la fuerza de gravedad
+          </p>
+          <div class="center">
+            <img src="img/orbita.gif" width="300" alt="">
+          </div>
+          <p id="intruccion-1" class="center">
+            A continucación <strong>enfoca el marcador para ver una orbita</strong>
+          </p>
+        </div>
       </div>
+      <div id="escena-4" class="center-vertical">
+
+        <div id="contenedor-guia-4">
+          <img id="personaje-guia-4" src="img/foca graduacion.svg" alt="">
+        </div>
+        <p id="info-escena-4" class="center">
+          Sabias que la tierra gira alrededor del sol y
+          tarda 365 días y 6 horas en dar una vuelta
+        </p>
+      </div>
+      <div id="escena-5" class="container center-vertical">
+        <div id="info-5" class="center">
+          <h3>
+            ¿Qué es el movimiento de rotación?
+          </h3>
+          <p>
+            Cuando un cuerpo, como el planeta Tierra,
+            gira sobre su propio eje, que permanece
+            fijo.
+          </p>
+        </div>
+        <audio id="camara-flash" src="sonidos/flash.mp3"></audio>
+        <div class="center">
+          <img src="img/rotacion.gif" width="280" alt="">
+        </div>
+        <div id="contenedor-guia-5" class="aling-left">
+          <img id="personaje-guia-5" src="img/foca.svg" width="180" alt="">
+        </div>
+      </div>
+      <div id="escena-6" class="container center-vertical">
+        <div class="center">
+          <h3>¿Qué es el movimiento de traslación?</h3>
+        </div>
+        <p class="center">
+          Se refiere al movimiento que hace un planeta al girar en su órbita alrededor del Sol.
+        </p>
+        <div class="center">
+          <img src="img/traslacion.webp" width="280" alt="">
+        </div>
+        <br>
+        <br>
+        <p id="intruccion-1" class="center">
+          A continucación <strong>enfoca el marcador, te sorprenderá</strong>
+        </p>
+      </div>
+      <div id="escena-7" class="container center-vertical">
+        <p id="info-escena-7" class="center">
+          El Sol rota una vez cada 27 días en su ecuador,
+          pero sólo una vez cada 31 días en sus polos.
+        </p>
+      </div>
+      <div id="escena-8" class="container center-vertical">
+        <div class="center">
+          <h3>La Luna de pengüi</h3><br>
+          <img src="img/luna.svg" width="70" alt="">
+        </div>
+        <p>
+          La Luna completa un giro sobre su eje aproximadamente cada 28 días,
+          que es el tiempo exacto que tarda en realizar su movimiento de
+          traslación alrededor de la Tierra.
+        </p>
+        <p>
+          Por lo tanto, los periodos de rotación y translación son idénticos.
+          Si la Luna no girara sobre su eje, la cara opuesta a la Tierra durante
+          la luna nueva sería la cara que veríamos durante la luna llena, no habría una cara oculta.
+        </p>
+        <p id="intruccion-1" class="center">
+          A continucación <strong>presta mucha atención, te puede interesar</strong>
+        </p>
+      </div>
+      <div id="escena-9" class="container center-vertical">
+        <div class="center">
+          <h3>Controles</h3>
+        </div>
+        <p>
+          Con las siguientes herramientas
+          podras observar de cerca los conocimientos del
+          gran pengüi.
+        </p>
+        <div class="center">
+          <img src="img/controles-rotacion.svg" width="150" alt="">
+          <p class="aling-left">
+            Esta consola te permitirá rotar el modelo 3D y obtener
+            una mejor perspectiva.
+          </p>
+        </div>
+        <div class="center">
+          <img src="img/controles-escala-pos.svg" width="200" alt="">
+          <p class="aling-left">
+            Este componente te dara la vista de pengüi.
+          </p>
+        </div>
+        <div id="contenedor-guia-9" class="center">
+          <img id="personaje-guia-9" src="img/foca.svg" width="120" walt="">
+        </div>
+      </div>
+      <div id="controles">
+        <div id="rotacion">
+          <div id="buttons-y">
+            <button id="ymas">y+</button>
+            <div id="buttons-x">
+              <button id="xmas">x+</button>
+              <div id="buttons-z">
+                <button id="zmas">z+</button>
+                <button id="zmenos">z-</button>
+              </div>
+              <button id="xmenos">x-</button>
+            </div>
+            <button id="ymenos">y-</button>
+          </div>
+        </div>
+        <div id="escala" class="contenedor-rango">
+          <div id="contenedor-valor-rango" class="rango">
+            <output name="valor_rango" id="valor_rango">1</output>
+          </div>
+          <input id="escala_input" type="range" class="slider" value="1" min="1" max="10" step="1"
+            oninput="valor_rango.value = escala_input.value">
+        </div>
+        <div id="posicion" class="contenedor-rango">
+          <div id="contenedor-valor-posicion" class="rango">
+            <output name="valor_posicion" id="valor_posicion">1</output>
+          </div>
+          <input id="range_posicion" class="slider" type="range" min="-4" max="5" step="1" value="1"
+            oninput="valor_posicion.value=range_posicion.value">
+        </div>
+      </div>
+
     </div>
-    <div id="escala" hidden>
-      <div id="contenedor-valor-rango">
-        <output name="valor_rango" id="valor_rango">1</output>
-      </div>
-      <input id="escala_input" type="range" class="slider" value="1" min="1" max="10" step="1"
-        oninput="valor_rango.value = escala_input.value">
-    </div>
-    <div id="posicion" hidden>
-      <div id="contenedor-valor-posicion">
-        <output name="valor_posicion" id="valor_posicion">1</output>
-      </div>
-      <input id="range_posicion" class="slider" type="range" min="-4" max="5" step="1" value="1"
-        oninput="valor_posicion.value=range_posicion.value">
+    <div id="btn-control-escenario">
+      <button id="btn-atras" type="button" class="btn btn-outline-dark btn-sm btn-footer">Atras</button>
+      <button id="btn-siguiente" type="button" class="btn btn-outline-dark  btn-sm btn-footer">Siguiente</button>
     </div>
   </div>
-  <a-scene id="escenario" embedded arjs="debugUIEnabled: false;">
+  <div id="aframe-escenario">
+    <a-scene  arjs="debugUIEnabled: false;" embedded renderer="logarithmicDepthBuffer: true;"
+    vr-mode-ui="enabled: false" gesture-detector>
 
     <a-assets>
       <img id="textura-sol" src="texturas/2k_sun.jpg">
@@ -101,11 +221,11 @@
       <audio id="sonido-fondo" src="sonidos/fondo.mp3" autoplay></audio>
 
     </a-assets>
-    <!--
-    <a-sound src="#sonido-fondo" autoplay="true" position="0 0 0" volume="0.08"></a-sound>
-    -->
 
-    <a-marker preset="hiro">
+    <a-sound src="#sonido-fondo" autoplay="true" position="0 0 0" volume="0.08"></a-sound>
+
+
+    <a-marker emitevents="true" id="marcador" preset="hiro">
 
       <a-entity id="escena-completa">
         <a-entity id="grupo-asteroides" scale="0.2 0.2 0.2" position="0 1.4 0">
@@ -140,25 +260,25 @@
           <a-entity id="sol" geometry="primitive: sphere" scale="0.5 0.5 0.5"
             material="src: #textura-sol; alphaTest: 1; flatShading: true; repeat: 2.1 1; shader: flat; color: #ffffff; height: 10; wireframeLinewidth: 1"
             position="0 1 0" spe-particles__sol-effect="
-    texture: texturas/explosion_sheet.png;
-    textureFrames: 5 5; 
-    blending: additive; 
-    activeMultiplier: 1; 
-    angle: 190;
-    direction: backward; 
-    distribution: SPHERE; 
-    maxAge: 1;
-    maxAgeSpread: 2;
-    positionOffset: 0 0 0;
-    positionDistribution: SPHERE;
-    randomizePosition: true; 
-    radius: 1;
-    radiusScale: 0.5 0.9 0.5;
-    velocitySpread: 1 1 1; 
-    velocityDistribution: SPHERE;
-    accelerationDistribution: SPHERE; 
-    drag: 1; 
-    size: 10">
+  texture: texturas/explosion_sheet.png;
+  textureFrames: 5 5; 
+  blending: additive; 
+  activeMultiplier: 1; 
+  angle: 190;
+  direction: backward; 
+  distribution: SPHERE; 
+  maxAge: 1;
+  maxAgeSpread: 2;
+  positionOffset: 0 0 0;
+  positionDistribution: SPHERE;
+  randomizePosition: true; 
+  radius: 1;
+  radiusScale: 0.5 0.9 0.5;
+  velocitySpread: 1 1 1; 
+  velocityDistribution: SPHERE;
+  accelerationDistribution: SPHERE; 
+  drag: 1; 
+  size: 10">
           </a-entity>
 
           <a-entity id="efecto-luz-sol"
@@ -179,11 +299,11 @@
               geometry="primitive: sphere" scale="0.090 0.090 0.090" material="src: #textura-tierra" position="0 0 0">
             </a-entity>
 
-            <!--Movimiento de rotacion luna-->
+
             <a-entity id="rotacion-luna" rotation="-5 360 0"
               animation="property: object3D.rotation.y; to: 360; loop: true; dur: 27320; easing: linear;">
 
-              <!--Movimiento de traslacion luna-->
+
               <a-entity id="traslacion-luna" rotation="0 0 0"
                 animation="property: object3D.rotation.y; to: 360; loop: true; dur: 27320; easing: linear;">
                 <a-entity id="luna" geometry="primitive: sphere" scale="0.03 0.03 0.03" material="src: #textura-luna"
@@ -199,14 +319,22 @@
     <a-entity camera></a-entity>
 
   </a-scene>
+
+  </div>
+  
+
+
   <script src="bootstrap/popper.min.js"></script>
   <script src="bootstrap/bootstrap.min.js"></script>
+  <!--
   <script src="js/rotation-control.js"></script>
   <script src="js/scale-position-control.js"></script>
+-->
   <script src="js/anime.min.js"></script>
   <script>
+
     var numEscena = 1;
-    var totalEscenas = 3;
+    var totalEscenas = 10;
 
     var asteroides = document.querySelector('#grupo-asteroides');
     asteroides.setAttribute('visible', false);
@@ -221,11 +349,27 @@
     var tierra = document.querySelector('#grupo-tierra');
     tierra.setAttribute('visible', false);
 
+
+    //CONTROLES
+    $("#rotacion").hide();
+    $("#escala").hide();
+    $("#posicion").hide();
+
     activarEscena(1)
     $("#btn-atras").hide();
 
+    //ESCENA 3
+    $("#intruccion-1").hide();
+
+    //ESCENA 4
+    $("#info-escena-4").hide();
+    $("#personaje-guia-4").hide();
+
+
+
     $("#btn-siguiente").click(function () {
       numEscena++;
+
       if (numEscena <= totalEscenas) {
         activarBtnAtras();
         activarEscena(numEscena);
@@ -233,6 +377,7 @@
       } else {
         numEscena = totalEscenas;
       }
+
     });
 
     $("#btn-atras").click(function () {
@@ -247,14 +392,126 @@
     });
     function controladorEscena(escena) {
       console.log("aniamcion, ", escena)
-      if (escena == 2) {
-        anime({
-          targets: '#contenedor-guia-1',
-          translateY: -300,
-          autoplay: true,
-          easing: 'easeInOutSine'
-        });
+      switch (escena) {
+        case 2:
+          anime({
+            targets: '#contenedor-guia-1',
+            translateY: -240,
+            autoplay: true,
+            easing: 'easeInOutSine'
+          });
+          break;
+        case 3:
+          mostrarEscenario();
+          orbitaTierra.setAttribute('visible', false);
+          setTimeout(function () {
+            $("#intruccion-1").show(500);
+          }, 2000);
+          break;
+        case 4:
+          ocultarEscenario();
+          orbitaTierra.setAttribute('visible', true);
+
+          document.getElementById("marcador").addEventListener("markerFound", (e) => {
+            $("#info-escena-4").show(1000);
+            $("#personaje-guia-4").show();
+            anime({
+              targets: '#personaje-guia-4',
+              translateX: -90,
+              rotate: -50,
+              autoplay: true,
+              easing: 'easeInOutSine'
+            });
+          });
+          document.getElementById("marcador").addEventListener("markerLost", (e) => {
+            $("#info-escena-4").hide()
+            anime({
+              targets: '#personaje-guia-4',
+              translateX: 0,
+              rotate: -50,
+              autoplay: true,
+              easing: 'easeInOutSine'
+            });
+            $("#personaje-guia-4").hide();
+
+          });
+
+          break;
+        case 5:
+          mostrarEscenario();
+          setTimeout(function () {
+            anime({
+              targets: '#personaje-guia-5',
+              keyframes: [
+                { translateY: 160 },
+                { translateX: "100%" },
+                {
+                  translateY: (function () {
+                    $("#personaje-guia-5").attr("src", "img/foca-camara.svg");
+                    setTimeout(function () {
+                      $("#camara-flash")[0].play();
+                    }, 3600)
+                    return -10;
+                  })
+                },
+                { translateY: 160 },
+                { translateX: "0%" },
+                {
+                  translateY: function () {
+                    setTimeout(function () {
+                      $("#personaje-guia-5").attr("src", "img/foca-boca.svg");
+                    }, 6000)
+                    return "0%";
+                  }
+                },
+              ],
+              duration: 10000,
+              easing: 'easeOutElastic(1, .8)',
+              loop: 2
+            });
+
+          }, 2000)
+        case 6:
+          mostrarEscenario()
+          asteroides.setAttribute('visible', false);
+          sol.setAttribute('visible', false);
+          $("#info-escena-7").hide();
+          break;
+        case 7:
+          ocultarEscenario();
+          asteroides.setAttribute('visible', true);
+          sol.setAttribute('visible', true);
+
+          document.getElementById("marcador").addEventListener("markerFound", () => {
+            $("#info-escena-7").show(1000);
+          });
+          document.getElementById("marcador").addEventListener("markerLost", () => {
+            $("#info-escena-7").hide();
+          });
+
+          break;
+        case 8:
+          mostrarEscenario();
+          break;
+        case 9:
+          mostrarEscenario();
+          $("#rotacion").hide();
+          $("#escala").hide();
+          $("#posicion").hide();
+          tierra.setAttribute('visible', false);
+          break;
+        case 10:
+          ocultarEscenario();
+          //$("#rotacion").show();
+          tierra.setAttribute('visible', true);
+          break;
       }
+    }
+    function ocultarEscenario() {
+      $("#base").css("background", "none");
+    }
+    function mostrarEscenario() {
+      $("#base").css("background", "rgba(0, 0, 0, 0.500)");
     }
     function activarBtnAtras() {
       if (numEscena >= 2) {
@@ -262,6 +519,13 @@
       } else {
         $("#btn-atras").hide();
       }
+
+      if (numEscena != 5) {
+        document.getElementById("camara-flash").muted = true;
+      } else {
+        document.getElementById("camara-flash").muted = false;
+      }
+
     }
     function activarEscena(escena) {
       for (let index = 0; index <= totalEscenas; index++) {
@@ -276,14 +540,7 @@
 
 
   </script>
-  <script>
-    var scene = document.querySelector('a-scene');
-    if (window.location.hostname == "localhost") {
-      scene.setAttribute('inspector', 'url: http://localhost:3333/dist/aframe-inspector.js')
-    } else {
-      scene.setAttribute('inspector', 'url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js')
-    }
-  </script>
+
 </body>
 
 </html>
