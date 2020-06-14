@@ -6,7 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="realidad-aumentada.png" />
   <title>WebAR</title>
+  <script src="js/jquery.js"></script>
+  <style>
+    #mensaje-espera {
+      display: table;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
 
+    #contenido-espera {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  </style>
+  
   <script src="aframe/aframe.min.js"></script>
   <script src="aframe/aframe-ar.js"></script>
 
@@ -15,19 +32,36 @@
   <script src="js/gesture-detector.js"></script>
   <script src="js/gestures.handler.js"></script>
 
-  <script src="js/jquery.js"></script>
-
+  
+  
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="css/estilos.css">
   <script>
+
     if (window.location.protocol == "http:") {
       window.location = window.location.href.replace('http:', 'https:');
     }
+    if (document.addEventListener) {
+
+      document.addEventListener("DOMContentLoaded", function () {        
+        $("#mensaje-espera").hide();
+        $("#base").show();
+      }, false);
+    }
+
   </script>
 
 </head>
 
 <body>
+  <div id="mensaje-espera">
+    <div id="contenido-espera" class="text-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Cargando...</span>
+      </div>
+    </div>
+  </div>
+
   <div id="base" class="container-fluid">
     <div id="escenario" class="row">
       <div id="escena-1" class="container center-vertical">
@@ -162,6 +196,7 @@
       <button id="btn-siguiente" type="button" class="btn btn-outline-dark  btn-sm btn-footer">Siguiente</button>
     </div>
   </div>
+
   <div id="intruccion-final" class="center">
     <p>Puedes mover el objeto con tus dedos</p>
   </div>
@@ -216,25 +251,25 @@
           <a-entity id="sol" geometry="primitive: sphere" scale="0.5 0.5 0.5"
             material="src: #textura-sol; alphaTest: 1; flatShading: true; repeat: 2.1 1; shader: flat; color: #ffffff; height: 10; wireframeLinewidth: 1"
             position="0 1 0" spe-particles__sol-effect="
-  texture: texturas/explosion_sheet.png;
-  textureFrames: 5 5; 
-  blending: additive; 
-  activeMultiplier: 1; 
-  angle: 190;
-  direction: backward; 
-  distribution: SPHERE; 
-  maxAge: 1;
-  maxAgeSpread: 2;
-  positionOffset: 0 0 0;
-  positionDistribution: SPHERE;
-  randomizePosition: true; 
-  radius: 1;
-  radiusScale: 0.5 0.9 0.5;
-  velocitySpread: 1 1 1; 
-  velocityDistribution: SPHERE;
-  accelerationDistribution: SPHERE; 
-  drag: 1; 
-  size: 10">
+            texture: texturas/explosion_sheet.png;
+            textureFrames: 5 5; 
+            blending: additive; 
+            activeMultiplier: 1; 
+            angle: 190;
+            direction: backward; 
+            distribution: SPHERE; 
+            maxAge: 1;
+            maxAgeSpread: 2;
+            positionOffset: 0 0 0;
+            positionDistribution: SPHERE;
+            randomizePosition: true; 
+            radius: 1;
+            radiusScale: 0.5 0.9 0.5;
+            velocitySpread: 1 1 1; 
+            velocityDistribution: SPHERE;
+            accelerationDistribution: SPHERE; 
+            drag: 1; 
+            size: 10">
           </a-entity>
 
           <a-entity id="efecto-luz-sol"
@@ -269,225 +304,16 @@
           </a-entity>
         </a-entity>
       </a-entity>
-
     </a-marker>
-
     <a-entity camera></a-entity>
-
   </a-scene>
-
-
-
-
-
+  <script>
+    $("#base").hide();
+  </script>
   <script src="bootstrap/popper.min.js"></script>
   <script src="bootstrap/bootstrap.min.js"></script>
-
   <script src="js/anime.min.js"></script>
-  <script>
-
-    var numEscena = 1;
-    var totalEscenas = 9;
-
-    var asteroides = document.querySelector('#grupo-asteroides');
-    asteroides.setAttribute('visible', false);
-
-    var sol = document.querySelector('#grupo-sol');
-    sol.setAttribute('visible', false);
-
-    var orbitaTierra = document.querySelector('#orbita-tierra');
-    orbitaTierra.setAttribute('visible', false);
-
-
-    var tierra = document.querySelector('#grupo-tierra');
-    tierra.setAttribute('visible', false);
-
-
-    activarEscena(1)
-    $("#btn-atras").hide();
-
-    //ESCENA 3
-    $("#intruccion-1").hide();
-
-    //ESCENA 4
-    $("#info-escena-4").hide();
-    $("#personaje-guia-4").hide();
-
-    //instruccion final
-    $("#intruccion-final").hide();
-
-    $("#btn-siguiente").click(function () {
-      numEscena++;
-
-      if (numEscena <= totalEscenas) {
-        activarBtnAtras();
-        activarEscena(numEscena);
-        controladorEscena(numEscena);
-      } else {
-        numEscena = totalEscenas;
-      }
-
-    });
-
-    $("#btn-atras").click(function () {
-      numEscena--;
-      if (numEscena >= 1) {
-        activarBtnAtras();
-        activarEscena(numEscena);
-        controladorEscena(numEscena);
-      } else {
-        numEscena == 1;
-      }
-    });
-    function controladorEscena(escena) {
-      console.log("aniamcion, ", escena)
-      switch (escena) {
-        case 2:
-          anime({
-            targets: '#contenedor-guia-1',
-            translateY: -240,
-            autoplay: true,
-            easing: 'easeInOutSine'
-          });
-          break;
-        case 3:
-          mostrarEscenario();
-          orbitaTierra.setAttribute('visible', false);
-          setTimeout(function () {
-            $("#intruccion-1").show(500);
-          }, 2000);
-          break;
-        case 4:
-          ocultarEscenario();
-          orbitaTierra.setAttribute('visible', true);
-
-          document.getElementById("marcador").addEventListener("markerFound", (e) => {
-            $("#info-escena-4").show(1000);
-            $("#personaje-guia-4").show();
-            anime({
-              targets: '#personaje-guia-4',
-              translateX: -90,
-              rotate: -50,
-              autoplay: true,
-              easing: 'easeInOutSine'
-            });
-          });
-          document.getElementById("marcador").addEventListener("markerLost", (e) => {
-            $("#info-escena-4").hide()
-            anime({
-              targets: '#personaje-guia-4',
-              translateX: 0,
-              rotate: -50,
-              autoplay: true,
-              easing: 'easeInOutSine'
-            });
-            $("#personaje-guia-4").hide();
-
-          });
-
-          break;
-        case 5:
-          mostrarEscenario();
-          setTimeout(function () {
-            anime({
-              targets: '#personaje-guia-5',
-              keyframes: [
-                { translateY: 160 },
-                { translateX: "100%" },
-                {
-                  translateY: (function () {
-                    $("#personaje-guia-5").attr("src", "img/foca-camara.svg");
-                    setTimeout(function () {
-                      $("#camara-flash")[0].play();
-                    }, 3600)
-                    return -10;
-                  })
-                },
-                { translateY: 160 },
-                { translateX: "0%" },
-                {
-                  translateY: function () {
-                    setTimeout(function () {
-                      $("#personaje-guia-5").attr("src", "img/foca-boca.svg");
-                    }, 6000)
-                    return "0%";
-                  }
-                },
-              ],
-              duration: 10000,
-              easing: 'easeOutElastic(1, .8)',
-              loop: 2
-            });
-
-          }, 2000)
-        case 6:
-          mostrarEscenario()
-          asteroides.setAttribute('visible', false);
-          sol.setAttribute('visible', false);
-          $("#info-escena-7").hide();
-          break;
-        case 7:
-          ocultarEscenario();
-          asteroides.setAttribute('visible', true);
-          sol.setAttribute('visible', true);
-
-          document.getElementById("marcador").addEventListener("markerFound", () => {
-            $("#info-escena-7").show(1000);
-          });
-          document.getElementById("marcador").addEventListener("markerLost", () => {
-            $("#info-escena-7").hide();
-          });
-
-          break;
-        case 8:
-          mostrarEscenario();
-          break;
-        case 9:
-          ocultarEscenario();
-          $("#intruccion-final").show(1000);
-          setTimeout(function(){
-            $("#intruccion-final").hide("slow");
-          },6000)
-          $("#base").css("display", "none");
-          //$("#rotacion").show();
-          tierra.setAttribute('visible', true);
-          break;
-      }
-    }
-    function ocultarEscenario() {
-      $("#base").css("background", "none");
-    }
-    function mostrarEscenario() {
-      $("#base").css("background", "rgba(0, 0, 0, 0.500)");
-    }
-    function activarBtnAtras() {
-      if (numEscena >= 2) {
-        $("#btn-atras").show();
-      } else {
-        $("#btn-atras").hide();
-      }
-
-      if (numEscena != 5) {
-        document.getElementById("camara-flash").muted = true;
-      } else {
-        document.getElementById("camara-flash").muted = false;
-      }
-
-    }
-    function activarEscena(escena) {
-      for (let index = 0; index <= totalEscenas; index++) {
-        const escenaRecorrida = $("#escena-" + index);
-        if (index != escena) {
-          escenaRecorrida.hide();
-        } else {
-          escenaRecorrida.show();
-        }
-      }
-    }
-
-
-  </script>
-
+  <script src="js/logica-escenario.js"></script>
 </body>
 
 </html>
