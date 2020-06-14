@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="img/foca.svg" />
+  <link href="https://pengui.herokuapp.com/img/foca.svg" rel="image_src" />
   <title>WebAR</title>
   <script src="js/jquery.js"></script>
   <style>
