@@ -8,6 +8,12 @@
 .aling-left{
     text-align: left;
 }
+.aling-justify{
+    text-align: justify;
+}
+.aling-initial{
+    text-align: initial;
+}
 .center-vertical{
     margin-top: auto;
     margin-bottom: auto;
@@ -40,7 +46,13 @@
     margin: auto;        
     margin-bottom: 40px;
 }
-
+#img-intrucciones div{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#escena-1{
+    padding-top: 30px;
+}
 html,body{
     height: 100%;
 }

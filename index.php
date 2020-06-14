@@ -23,7 +23,7 @@
       vertical-align: middle;
     }
   </style>
-  
+
   <script src="aframe/aframe.min.js"></script>
   <script src="aframe/aframe-ar.js"></script>
 
@@ -32,18 +32,18 @@
   <script src="js/gesture-detector.js"></script>
   <script src="js/gestures.handler.js"></script>
 
-  
-  
+
+
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="css/estilos.css">
   <script>
-
+    document.oncontextmenu = function(){return false}
     if (window.location.protocol == "http:") {
       window.location = window.location.href.replace('http:', 'https:');
     }
     if (document.addEventListener) {
 
-      document.addEventListener("DOMContentLoaded", function () {        
+      document.addEventListener("DOMContentLoaded", function () {
         $("#mensaje-espera").hide();
         $("#base").show();
       }, false);
@@ -73,20 +73,47 @@
         </p>
 
         <p>
+         <em>
           “La Tierra es un lugar más bello para nuestros ojos
           que cualquiera que conozcamos. Pero esa belleza ha
           sido esculpida por el cambio: el cambio suave, casi
           imperceptible, y el cambio repentino y violento.
-          En el cosmos no hay lugar que esté a salvo del cambio.”
-        <div class="aling-right"><strong>Carl Sagan</strong></div>
+          En el cosmos no hay lugar que esté a salvo del cambio”.
+         </em>
+        <div class="aling-right"><strong><em>Carl Sagan</em></strong></div>
         </p>
         <div class="center">
-          <br>
-          <br><br>
-          <br>
-          <p>Para obtener una mejor experiencia recomendamos usar Firefox</p>
+          <h2>Antes de empezar</h2>
+         
+          <div id="img-intrucciones" class="row">
+            <div class="col-md-4">
+              <p >
+                Es importante que le permitas a la aplicación usar tu camara para poder
+                realizar esta experiencia, si no lo has echo recarga la apliación.
+              </p>
+              <p>
+                Esta imagen se llama <strong>"marcador"</strong>.
+              </p>
+              <img src="img/hiro.png" class="img-fluid" width="200" alt="">
+              
+            </div>
+            <div class="col-md-4">
+              <p>
+                Si ves el mensaje <strong>"Con tu cámara enfoca el marcador".</strong> has lo siguiente:
+              </p>
+              <img src="img/1.jpg" class="img-fluid" alt="" >
+            </div>
+            <div class="col-md-4">
+              <img src="img/2.jpg" class="img-fluid" alt="" style="height: 286.867px;">
+            </div>
+          </div>
+          <p>Puedes descargar el marcador en el siguiente link <a target="_blank"
+              href="https://stemkoski.github.io/AR-Examples/markers/hiro.png">(Has clic aquí)</a>. Tambíen puedes usar la imagen digital desde un celular o computadora.</p>
+          
+          <p>Para obtener una mejor experiencia recomendamos usar Firefox. Comparte el link con tus amigos :)</p>
           <img src="https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo-word-hor-sm.5622edbdf02d.png"
             width="100px" alt="">
+          <br><br>
         </div>
 
       </div>
