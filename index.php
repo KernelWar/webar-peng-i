@@ -133,7 +133,7 @@
           <img id="personaje-guia-2" src="img/foca.svg" width="200" alt="Mi nombre es pengüi">
         </div>
         <div class="center">
-          <h2>¿Qué es una orbita?</h2>
+          <h2>¿Qué es una órbita?</h2>
         </div>
         <div>
           <p>
@@ -145,7 +145,7 @@
             <img src="img/orbita.gif" width="300" alt="">
           </div>
           <p id="intruccion-1" class="center">
-            A continucación <strong>enfoca el marcador para ver una orbita</strong>
+            A continucación <strong>enfoca el marcador para ver una órbita</strong>
           </p>
         </div>
       </div>
