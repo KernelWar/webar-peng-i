@@ -153,73 +153,18 @@
           la luna nueva sería la cara que veríamos durante la luna llena, no habría una cara oculta.
         </p>
         <p id="intruccion-1" class="center">
-          A continucación <strong>presta mucha atención, te puede interesar</strong>
+          A continuación <strong> podras interacturar con todos los conocimientos aprendidos.</strong>
         </p>
       </div>
-      <div id="escena-9" class="container center-vertical">
-        <div class="center">
-          <h3>Controles</h3>
-        </div>
-        <p>
-          Con las siguientes herramientas
-          podras observar de cerca los conocimientos del
-          gran pengüi.
-        </p>
-        <div class="center">
-          <img src="img/controles-rotacion.svg" width="150" alt="">
-          <p class="aling-left">
-            Esta consola te permitirá rotar el modelo 3D y obtener
-            una mejor perspectiva.
-          </p>
-        </div>
-        <div class="center">
-          <img src="img/controles-escala-pos.svg" width="200" alt="">
-          <p class="aling-left">
-            Este componente te dara la vista de pengüi.
-          </p>
-        </div>
-        <div id="contenedor-guia-9" class="center">
-          <img id="personaje-guia-9" src="img/foca.svg" width="120" walt="">
-        </div>
-      </div>
-      <div id="controles">
-        <div id="rotacion">
-          <div id="buttons-y">
-            <button id="ymas">y+</button>
-            <div id="buttons-x">
-              <button id="xmas">x+</button>
-              <div id="buttons-z">
-                <button id="zmas">z+</button>
-                <button id="zmenos">z-</button>
-              </div>
-              <button id="xmenos">x-</button>
-            </div>
-            <button id="ymenos">y-</button>
-          </div>
-        </div>
-        <div id="escala" class="contenedor-rango">
-          <div id="contenedor-valor-rango" class="rango">
-            <output name="valor_rango" id="valor_rango">1</output>
-          </div>
-          <input id="escala_input" type="range" class="slider" value="1" min="1" max="10" step="1"
-            oninput="valor_rango.value = escala_input.value">
-        </div>
-        <div id="posicion" class="contenedor-rango">
-          <div id="contenedor-valor-posicion" class="rango">
-            <output name="valor_posicion" id="valor_posicion">1</output>
-          </div>
-          <input id="range_posicion" class="slider" type="range" min="-4" max="5" step="1" value="1"
-            oninput="valor_posicion.value=range_posicion.value">
-        </div>
-      </div>
-
     </div>
     <div id="btn-control-escenario">
       <button id="btn-atras" type="button" class="btn btn-outline-dark btn-sm btn-footer">Atras</button>
       <button id="btn-siguiente" type="button" class="btn btn-outline-dark  btn-sm btn-footer">Siguiente</button>
     </div>
   </div>
-
+  <div id="intruccion-final" class="center">
+    <p>Puedes mover el objeto con tus dedos</p>
+  </div>
   <a-scene id="aframe-escenario" gesture-detector arjs="debugUIEnabled: false;" embedded
     renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector>
 
@@ -337,15 +282,12 @@
 
   <script src="bootstrap/popper.min.js"></script>
   <script src="bootstrap/bootstrap.min.js"></script>
-  <!--
-  <script src="js/rotation-control.js"></script>
-  <script src="js/scale-position-control.js"></script>
--->
+
   <script src="js/anime.min.js"></script>
   <script>
 
     var numEscena = 1;
-    var totalEscenas = 10;
+    var totalEscenas = 9;
 
     var asteroides = document.querySelector('#grupo-asteroides');
     asteroides.setAttribute('visible', false);
@@ -361,11 +303,6 @@
     tierra.setAttribute('visible', false);
 
 
-    //CONTROLES
-    $("#rotacion").hide();
-    $("#escala").hide();
-    $("#posicion").hide();
-
     activarEscena(1)
     $("#btn-atras").hide();
 
@@ -376,7 +313,8 @@
     $("#info-escena-4").hide();
     $("#personaje-guia-4").hide();
 
-
+    //instruccion final
+    $("#intruccion-final").hide();
 
     $("#btn-siguiente").click(function () {
       numEscena++;
@@ -505,14 +443,11 @@
           mostrarEscenario();
           break;
         case 9:
-          mostrarEscenario();
-          $("#rotacion").hide();
-          $("#escala").hide();
-          $("#posicion").hide();
-          tierra.setAttribute('visible', false);
-          break;
-        case 10:
           ocultarEscenario();
+          $("#intruccion-final").show(1000);
+          setTimeout(function(){
+            $("#intruccion-final").hide("slow");
+          },6000)
           $("#base").css("display", "none");
           //$("#rotacion").show();
           tierra.setAttribute('visible', true);

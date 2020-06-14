@@ -289,3 +289,7 @@ CONTROLES DE ESCALA
     border: none;
   }
 
+#intruccion-final{
+    color: white;
+    margin-top: 20px;
+}
