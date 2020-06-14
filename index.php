@@ -8,7 +8,8 @@
   <link href="https://pengui.herokuapp.com/img/foca.svg" rel="image_src" />
   <meta property="og:title" content="Pengüi" />
   <meta property="og:description" content="En algún lugar, algo increíble está esperando a ser descubierto." />
-  <meta property="og:image" content="img/foca.svg" />
+  <meta property="og:image" content="img/fondo.jpg" />
+  <meta property="og:image:alt" content="Has click :)" />
   <title>WebAR</title>
   <script src="js/jquery.js"></script>
   <style>
