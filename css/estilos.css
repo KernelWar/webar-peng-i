@@ -19,6 +19,9 @@
     margin-bottom: auto;
     vertical-align: middle;
 }
+#texto-introduccion{
+    font-size: 14px;
+}
 .ar-iframe{
     position: absolute;
     left: 0;

@@ -71,10 +71,10 @@
     <div id="escenario" class="row">
       <div id="escena-1" class="container center-vertical">
         <h2 class="center">Bienvenido !!</h2>
-        <p>
+        <p id="texto-introduccion">
           Estas apunto de iniciar una experiencia
-          online de realidad aumentada. Esta apliación fue echa para motivos
-          didácticos.
+          online de realidad aumentada. Este proyecto fue realizadó
+          con objetivos educativos, esperando impactar al público en general.
         </p>
 
         <p class="aling-right">
