@@ -29,7 +29,11 @@
     left: 0;
     right: 0;
 }
-
+#instrucciones-marcador{
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
 
 html,body{
     height: 100%;

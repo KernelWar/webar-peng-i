@@ -19,8 +19,6 @@
     activarEscena(1)
     $("#btn-atras").hide();
 
-    //ESCENA 3
-    $("#intruccion-1").hide();
 
     //ESCENA 4
     $("#info-escena-4").hide();
@@ -28,6 +26,9 @@
 
     //instruccion final
     $("#intruccion-final").hide();
+
+    //instrucciones para visualizar
+    $("#instrucciones-marcador").hide();
 
     $("#btn-siguiente").click(function () {
       numEscena++;
@@ -66,9 +67,7 @@
         case 3:
           mostrarEscenario();
           orbitaTierra.setAttribute('visible', false);
-          setTimeout(function () {
-            $("#intruccion-1").show(500);
-          }, 2000);
+          
           break;
         case 4:
           ocultarEscenario();
@@ -169,9 +168,12 @@
     }
     function ocultarEscenario() {
       $("#base").css("background", "none");
+      $("#instrucciones-marcador").show(1000);
+      
     }
     function mostrarEscenario() {
       $("#base").css("background", "rgba(0, 0, 0, 0.500)");
+      $("#instrucciones-marcador").hide();
     }
     function activarBtnAtras() {
       if (numEscena >= 2) {

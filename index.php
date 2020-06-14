@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="realidad-aumentada.png" />
   <title>WebAR</title>
   <script src="js/jquery.js"></script>
@@ -196,7 +196,9 @@
       <button id="btn-siguiente" type="button" class="btn btn-outline-dark  btn-sm btn-footer">Siguiente</button>
     </div>
   </div>
-
+  <div id="instrucciones-marcador">
+    <p>Con tu cámara enfoca el marcador</p>
+  </div>
   <div id="intruccion-final" class="center">
     <p>Puedes mover el objeto con tus dedos</p>
   </div>
