@@ -116,6 +116,7 @@
           <img src="https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo-word-hor-sm.5622edbdf02d.png"
             width="100px" alt="">
           <br><br>
+          <p>(Desarrollado por: José Sócrates López López, Sara Merino Ávila, Josué Amos Martínez Pérez)</p>
         </div>
 
       </div>
