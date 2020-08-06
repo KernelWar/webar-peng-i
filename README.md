@@ -6,7 +6,9 @@
   <img width="200" src="capturas/4.jpg">
 </div>
 
-
+# Características
+  - En esta rama se implementa la manipulacion de objetos 3D con la deteccion del touch haciendo
+  gestos con los dedos
 
 # Requisitos
 
