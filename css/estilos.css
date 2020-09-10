@@ -53,6 +53,9 @@
     margin-top: auto;
     margin-bottom: auto;
 }
+#names-author{
+    list-style: none;
+}
 #escena-1{
     padding-top: 30px;
 }
